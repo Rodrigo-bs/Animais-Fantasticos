@@ -3,6 +3,7 @@ export default class Modal {
     this.botaoAbrir = document.querySelector(open);
     this.botaoFechar = document.querySelector(close);
     this.containerModal = document.querySelector(container);
+
     this.cliqueForaModal = this.cliqueForaModal.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
   }
@@ -16,11 +17,17 @@ export default class Modal {
     if (event.target === event.currentTarget) this.toggleModal(event);
   }
 
+  addModalEvent() {
+    this.botaoAbrir.addEventListener('click', this.toggleModal);
+    this.botaoFechar.addEventListener('click', this.toggleModal);
+    this.containerModal.addEventListener('click', this.cliqueForaModal);
+  }
+
   init() {
     if (this.botaoAbrir && this.botaoFechar && this.containerModal) {
-      this.botaoAbrir.addEventListener('click', this.toggleModal);
-      this.botaoFechar.addEventListener('click', this.toggleModal);
-      this.containerModal.addEventListener('click', this.cliqueForaModal);
+      this.addModalEvent();
     }
+
+    return this;
   }
 }
