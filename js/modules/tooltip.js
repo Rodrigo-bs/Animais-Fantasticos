@@ -43,5 +43,7 @@ export default class Tooltip {
     this.tooltips.forEach((item) => {
       item.addEventListener('mouseover', (event) => this.onMouseOver(event));
     });
+
+    return this;
   }
 }

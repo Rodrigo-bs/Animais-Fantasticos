@@ -21,6 +21,7 @@ export default class InitScrollSuave {
 
   init() {
     if (this.linksInternos.length) this.addlinkEvent();
+
     return this;
   }
 }
