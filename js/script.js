@@ -3,11 +3,11 @@ import Accordion from './modules/accordion.js';
 import TabNav from './modules/tabnav.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
+import FetchAnimais from './modules/fetch-animais.js';
+import DropdownMenu from './modules/dropdown-menu.js';
 
-import initDropdownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu-mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
-import FetchAnimais from './modules/fetch-animais.js';
 import initFetchBitcoin from './modules/fetch-bitcoin.js';
 import initAnimacaoScroll from './modules/scroll-animacao.js';
 
@@ -29,7 +29,9 @@ modal.init();
 const fecthAnimais = new FetchAnimais('http://127.0.0.1:5500/animaisapi.json', '.numeros-grid', 'numero-animal');
 fecthAnimais.init();
 
-initDropdownMenu();
+const dropdownMenu = new DropdownMenu('[data-dropdown]', 'active');
+dropdownMenu.init();
+
 initMenuMobile();
 initFuncionamento();
 initFetchBitcoin();
