@@ -32,7 +32,8 @@ fecthAnimais.init();
 const dropdownMenu = new DropdownMenu('[data-dropdown]', 'active');
 dropdownMenu.init();
 
+initFetchBitcoin('https://blockchain.info/ticker', '.btc-preco');
+
 initMenuMobile();
 initFuncionamento();
-initFetchBitcoin();
 initAnimacaoScroll();
